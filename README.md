@@ -1,6 +1,10 @@
 # grandjury
 
-Get human feedback on your AI in 3 lines of Python.
+> Real human evaluations of AI models. **25,000+ blind reviews** by **200+ verified reviewers** across **58 models** (GPT-5, Claude Opus 4.7, Gemini 3.1, Grok 4.3, DeepSeek V4, Mistral, Kimi K2.6 and more) and **44 benchmarks**. Free. Python SDK + MCP server + ChatGPT GPT + REST.
+
+[![PyPI](https://img.shields.io/pypi/v/grandjury.svg)](https://pypi.org/project/grandjury/) [![Docs](https://img.shields.io/badge/docs-humanjudge.com-blue)](https://humanjudge.com/docs) [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) [![Built on](https://img.shields.io/badge/built_on-humanjudge.com-orange)](https://humanjudge.com)
+
+Get human feedback on your AI in 3 lines of Python:
 
 ```python
 from grandjury import GrandJury
@@ -17,6 +21,32 @@ print(f"Pass rate: {df['pass_rate'].mean():.1%}")
 ```
 
 **Patent Pending.**
+
+## Why HumanJudge
+
+Most AI evaluation pipelines use LLMs to judge LLMs. That inherits the same biases, conventions, and blind spots as the models being evaluated — and tends to produce eval pipelines with ~0% disagreement, which is the diagnostic for "not measuring quality, just confirming assumptions" ([essay](https://humanjudge.com/ai-reviews/your-eval-pipeline-has-zero-disagreement)).
+
+HumanJudge uses **real human reviewers** who blind-evaluate AI outputs across structured benchmarks (marketing, healthcare, end-of-life conversations, cultural fluency, code review, and more) and write their reasoning. Reviewers earn XP, get credentialing letters, and stay anonymous to the reader by default.
+
+The data is queryable via this SDK, the [MCP server](https://humanjudge.com/docs/pulse/claude-desktop), a [ChatGPT GPT action](https://humanjudge.com/docs/pulse/chatgpt), and a REST API.
+
+## Integrations
+
+| Surface | Install | Docs |
+|---|---|---|
+| **Python SDK** | `pip install grandjury` | [docs/pulse/python-sdk](https://humanjudge.com/docs/pulse/python-sdk) |
+| **Claude Desktop MCP** | Add `https://api.humanjudge.com/mcp` as a custom connector | [docs/pulse/claude-desktop](https://humanjudge.com/docs/pulse/claude-desktop) |
+| **Claude Code MCP** | Add to `.mcp.json` (remote, no install) | [docs/pulse/claude-code](https://humanjudge.com/docs/pulse/claude-code) |
+| **ChatGPT GPT** | Search "HumanJudge" in the GPT Store | [docs/pulse/chatgpt](https://humanjudge.com/docs/pulse/chatgpt) |
+| **REST API** | n/a | [humanjudge.com/docs](https://humanjudge.com/docs) |
+
+## Use cases
+
+- **ML engineers** — benchmark your model against 58+ commercial models on real tasks; see exactly what humans flag with category + reasoning
+- **Data scientists** — pull reviewer reasoning, flag patterns, and disagreement data as pandas DataFrames for analysis
+- **AI agent developers** — log traces from any agent loop (decorator, context manager, or direct call); get reviewer feedback you can quote to stakeholders
+- **Independent researchers** — query the public benchmark data without an API key (read-only)
+- **Builders** — register your own AI, create a custom benchmark on the topics you care about, get real human reviews on YOUR specific use case ([humanjudge.com/for-developers](https://humanjudge.com/for-developers))
 
 ## What is GrandJury?
 
