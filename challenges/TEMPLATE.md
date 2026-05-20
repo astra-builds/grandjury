@@ -3,7 +3,7 @@
 
   Instructions:
   1. Copy this file to /challenges/<your-github-handle>.md
-  2. Fill in the sections below — replace the worked example with your own pick(s)
+  2. Fill in the sections below
   3. Open a PR
 
   See /challenges/README.md for the challenge instructions.
@@ -20,20 +20,21 @@
 
   Substance > length. Show your thinking, not a CV.
 
-  A worked example is shown further down — use it as a reference, then
-  delete it.
+  Example of what a good entry reads like — write your own in the same shape:
+
+    ### Stream C — Model routing
+
+    I work on production agent systems and we currently use a static
+    model selector — pick GPT-4 for X, Claude for Y. The "live routing
+    on pluralistic feedback" angle is the missing piece, especially for
+    empathy-sensitive use cases. I'd want to prototype a small router
+    that consumes HumanJudge verdicts and compare to our current static
+    rules.
 -->
 
-### Stream _
+### Stream <letter> — <stream name>
 
 <your 2-4 sentences — what interests you about this stream, your background, what you'd want to work on>
-
-
-*(example — delete this whole block once you've written your own)*
-
-### Stream A — Pluralistic data for model training
-
-Preference-optimization methods collapse multi-rater feedback into a single label, which is the gap my masters thesis explored using Tchebycheff aggregation on multi-attribute medical data. I'd run the empirical comparison against weighted-sum on the HumanJudge corpus — the safety-critical framing in the umbrella is the natural extension of what I tried. Could share what I learned about constrained MOPO vs. min-aggregation tradeoffs.
 
 
 ## Challenge result
