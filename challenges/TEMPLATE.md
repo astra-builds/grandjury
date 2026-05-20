@@ -13,10 +13,10 @@
 ## Streams of interest
 
 <!--
-  For each stream that pulls you, write 2-4 sentences on:
-    - what part of the open question you'd dig into
-    - what background or prior work you'd bring
-    - what you might want to ship or write first
+  For each stream that interests you, write 2-4 sentences on:
+    - what about this stream interests you (which open question, angle, etc.)
+    - your background or prior work
+    - what you'd want to work on or contribute
 
   Substance > length. Show your thinking, not a CV.
 
@@ -31,7 +31,7 @@ Preference-optimization methods collapse multi-rater feedback into a single labe
 
 ### Stream <letter> — <stream name>
 
-<your 2-4 sentences here — what you'd dig into, what background you bring, what you'd ship>
+<your 2-4 sentences — what interests you about this stream, your background, what you'd want to work on>
 
 
 ## Challenge result
