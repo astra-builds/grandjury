@@ -20,18 +20,20 @@
 
   Substance > length. Show your thinking, not a CV.
 
-  A worked example is shown below for Stream A — delete it entirely
-  and replace with your own pick(s).
+  A worked example is shown further down — use it as a reference, then
+  delete it.
 -->
 
-### Stream A — Pluralistic data for model training  *(example — delete this whole block and write your own)*
-
-Preference-optimization methods collapse multi-rater feedback into a single label, which is the gap my masters thesis explored using Tchebycheff aggregation on multi-attribute medical data. I'd run the empirical comparison against weighted-sum on the HumanJudge corpus — the safety-critical framing in the umbrella is the natural extension of what I tried. Could share what I learned about constrained MOPO vs. min-aggregation tradeoffs.
-
-
-### Stream <letter> — <stream name>
+### Stream _
 
 <your 2-4 sentences — what interests you about this stream, your background, what you'd want to work on>
+
+
+*(example — delete this whole block once you've written your own)*
+
+### Stream A — Pluralistic data for model training
+
+Preference-optimization methods collapse multi-rater feedback into a single label, which is the gap my masters thesis explored using Tchebycheff aggregation on multi-attribute medical data. I'd run the empirical comparison against weighted-sum on the HumanJudge corpus — the safety-critical framing in the umbrella is the natural extension of what I tried. Could share what I learned about constrained MOPO vs. min-aggregation tradeoffs.
 
 
 ## Challenge result
