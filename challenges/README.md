@@ -166,4 +166,4 @@ See [`/CONTRIBUTING.md`](../CONTRIBUTING.md) for the full apply walkthrough.
 - **Numbers match.** What you paste matches what we see in the DB.
 - **Stream interest reads genuine.** 1–2 sentences per stream that shows you actually thought about it.
 
-That's it. We're not grading the analysis — just confirming you're human, you can code, you've used the SDK, and you have real interest. Arthur reviews within ~3 business days.
+That's it. We're not grading the analysis — just confirming you're human, you can code, you've used the SDK, and you have real interest. Reviewed within ~3 business days.

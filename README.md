@@ -307,7 +307,7 @@ No CV, no "tell us about yourself." The application is a small PR with a challen
 2. **Connect GitHub** on [humanjudge.com/profile](https://humanjudge.com/profile) so we can link your PR to your account
 3. **Pick a challenge** from [`/challenges/README.md`](challenges/README.md), run it locally
 4. **Add `/challenges/<your-github-handle>.md`** following [`TEMPLATE.md`](challenges/TEMPLATE.md), open the PR
-5. **Arthur reviews** personally within ~3 business days → after merge, Discord invite arrives via email
+5. **Reviewed personally** within ~3 business days → after merge, Discord invite arrives via email
 
 Full walkthrough in [`CONTRIBUTING.md`](CONTRIBUTING.md#apply-to-the-rd-community). Privacy: email never appears in the public PR — your GitHub handle is the only public identifier.
 

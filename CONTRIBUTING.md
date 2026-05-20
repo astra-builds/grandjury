@@ -73,7 +73,7 @@ Then open the PR from your fork's GitHub page.
 ### What happens next
 
 - The PR template auto-loads with a checklist of confirmations
-- Arthur reviews personally within ~3 business days
+- Reviewed personally within ~3 business days
 - **Star this repo** to get notified when your PR is merged
 - After merge: a Discord invite link is emailed to the address on your HumanJudge profile
 - Join Discord → verify in `#verify` → unlock the stream channels → post intro and start engaging

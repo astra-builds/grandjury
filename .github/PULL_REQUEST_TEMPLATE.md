@@ -26,7 +26,7 @@ Before submitting, confirm:
 - [ ] My challenge result file is at `/challenges/<my-github-handle>.md` and follows the format in `TEMPLATE.md`
 
 **What happens next:**
-- Arthur reviews personally within ~3 business days
+- Reviewed personally within ~3 business days
 - ⭐ Star this repo to get notified when your PR is merged
 - After merge: Discord invite arrives via email to the address on your HumanJudge profile
 - See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for the full flow
