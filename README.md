@@ -14,7 +14,6 @@
 [![Python](https://img.shields.io/pypi/pyversions/grandjury?style=flat-square&color=blue)](https://pypi.org/project/grandjury/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-humanjudge.com-blue?style=flat-square)](https://humanjudge.com/docs)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/vw43ufYmDH)
 [![Berkeley RDI](https://img.shields.io/badge/Berkeley_RDI-Aug_1--2_2026-003262?style=flat-square)](https://rdi.berkeley.edu/)
 
 **[Install the SDK ↓](#installation) · [Join the R&D community ↓](#research-community)**
@@ -311,9 +310,7 @@ No CV, no "tell us about yourself." The application is a small PR with a challen
 
 Full walkthrough in [`CONTRIBUTING.md`](CONTRIBUTING.md#apply-to-the-rd-community). Privacy: email never appears in the public PR — your GitHub handle is the only public identifier.
 
-[Join Discord →](https://discord.gg/vw43ufYmDH)
-
-Stream-level conversations, research context, and active threads all live in Discord (private after onboarding).
+After your PR is merged, you'll receive instructions for joining our Discord, where the stream-level conversations and active research threads live.
 
 ## Contributing
 
