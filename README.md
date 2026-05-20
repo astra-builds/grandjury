@@ -42,7 +42,9 @@ print(f"Pass rate: {df['pass_rate'].mean():.1%}")
 
 ## Research community
 
-Our center of gravity is **post-deployment evaluation**. We treat live evaluation as a **datastream, not a fixed dataset** — capturing pluralistic, multi-user, multi-context feedback continuously, and keeping the signal rich rather than collapsing it to a single score. Anchored at the [Berkeley RDI Agentic AI Summit, Aug 1–2 2026](https://rdi.berkeley.edu/) (confirmed poster presenter spot).
+AI evaluation is usually a single number. We capture it as a continuous **datastream** instead — pluralistic, multi-reviewer, multi-context, from real production traffic. This open R&D community works on what that richer signal can do.
+
+Presenting at [Berkeley RDI's Agentic AI Summit, Aug 1–2 2026](https://rdi.berkeley.edu/).
 
 Six research streams. Pick by interest, not assignment.
 
@@ -70,17 +72,15 @@ What richer signal can reviewers submit beyond binary verdict + categorical tags
 
 How does live pluralistic evaluation surface inside the tools where developers and workflows already touch AI output? Categories of integration surface: LLM observability platforms, workflow-automation systems, agent IDEs, dashboards, communications and alerting, notebooks, documentation embeds. Each integration ships into its own developer community.
 
-### Apply by opening a PR
+### How to apply
 
-No CV, no "tell us about yourself." The application is a small PR with a challenge result + which streams interest you. Five steps:
+The application is a small pull request to this repo.
 
-1. **Sign up** at [humanjudge.com/auth?role=builder](https://humanjudge.com/auth?role=builder) (free) — gets you a PAT and the `builder` role
-2. **Connect GitHub** on [humanjudge.com/profile](https://humanjudge.com/profile) so we can link your PR to your account
-3. **Pick a challenge** from [`/challenges/README.md`](challenges/README.md), run it locally
-4. **Add `/challenges/<your-github-handle>.md`** following [`TEMPLATE.md`](challenges/TEMPLATE.md), open the PR
-5. **Reviewed personally** within ~3 business days → after merge, instructions for joining our Discord arrive via email
+1. **Do the challenge** in [`/challenges/README.md`](challenges/README.md). It's one short question. Running it requires a free HumanJudge account — instructions are inside the challenge file.
+2. **Connect your GitHub** on [humanjudge.com/profile](https://humanjudge.com/profile) (you'll already be signed in from step 1) so we can match your PR to your account.
+3. **Open a PR** that adds `/challenges/<your-github-handle>.md` with your result, following the shape in [`TEMPLATE.md`](challenges/TEMPLATE.md). Reviewed personally within ~3 business days. After merge, instructions for joining the Discord arrive in your inbox.
 
-Full walkthrough in [`CONTRIBUTING.md`](CONTRIBUTING.md#apply-to-the-rd-community). Privacy: email never appears in the public PR — your GitHub handle is the only public identifier.
+Full walkthrough in [`CONTRIBUTING.md`](CONTRIBUTING.md#apply-to-the-rd-community).
 
 ## Why HumanJudge
 

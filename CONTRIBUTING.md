@@ -34,7 +34,7 @@ git config user.email "<your-github-username>@users.noreply.github.com"
 
 ### 3. Pick a challenge, run it, submit the PR
 
-Browse the challenge questions in [`/challenges/README.md`](challenges/README.md). Pick one at your level (easy / medium / spicy). Run it with the SDK.
+Follow the walkthrough in [`/challenges/README.md`](challenges/README.md). It's one short task — count evaluations in any arena using the SDK. ~15 minutes start to finish.
 
 Then submit:
 
