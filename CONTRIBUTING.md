@@ -13,9 +13,9 @@ The application is a small PR — not a form, not a CV submission. Three steps:
 
 ### 1. Sign up and get a PAT
 
-1. Go to **[humanjudge.com/auth?role=builder](https://humanjudge.com/auth?role=builder)** — free, no credit card. This creates your HumanJudge profile with the `builder` role.
-2. Copy your PAT from the profile page.
-3. Install the SDK locally and set the PAT:
+1. Go to **[humanjudge.com/auth?role=builder](https://humanjudge.com/auth?role=builder)** — free, no credit card. This creates your HumanJudge account with developer access.
+2. Copy your token from the profile page.
+3. Install the SDK locally and set the token:
 
 ```bash
 pip install grandjury

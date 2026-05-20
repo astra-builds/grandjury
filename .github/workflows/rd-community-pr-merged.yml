@@ -60,9 +60,9 @@ jobs:
               '1. **Join Discord** — invite link will be posted in the pinned thread of the community channel',
               '2. **Land in `#verify`** — only channel visible to new joiners',
               '3. **Click "Verify with my email"** and enter the email on your HumanJudge profile',
-              '4. **Granted `Builder` role** automatically — unlocks the stream channels',
+              '4. **Granted `Researcher` role** automatically — unlocks the stream channels',
               '',
-              '_The verification bot checks: your email exists on HumanJudge, your `builder` role is set, and this PR was merged. All three must match._',
+              '_The verification bot checks: your email exists on HumanJudge, your account has developer access, and this PR was merged. All three must match._',
               '',
               'Pick a stream and start engaging. See you in `#general`.',
             ].join('\n');

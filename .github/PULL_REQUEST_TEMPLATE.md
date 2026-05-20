@@ -20,7 +20,7 @@
 
 Before submitting, confirm:
 
-- [ ] I signed up at humanjudge.com/auth?role=builder and have a PAT
+- [ ] I have a HumanJudge account (signed up at humanjudge.com/auth?role=builder)
 - [ ] I connected my GitHub on humanjudge.com/profile (so my PR can be linked to my HumanJudge profile)
 - [ ] My git is configured to use GitHub's noreply email (`<handle>@users.noreply.github.com`) so my real email isn't in commit history
 - [ ] My challenge result file is at `/challenges/<my-github-handle>.md` and follows the format in `TEMPLATE.md`
