@@ -11,32 +11,23 @@ Two ways to contribute:
 
 The application is a small PR — not a form, not a CV submission. Three steps:
 
-### 1. Sign up and get a PAT
+### 1. Complete the challenge
 
-1. Go to **[humanjudge.com/auth?role=builder](https://humanjudge.com/auth?role=builder)**. This creates your HumanJudge account with developer access.
-2. Copy your token from the profile page.
-3. Install the SDK locally and set the token:
+Follow the walkthrough in [`/challenges/README.md`](challenges/README.md). It's one short task — count evaluations in any arena using the SDK. ~15 minutes start to finish. The walkthrough covers installing the SDK, signing up for a HumanJudge account + token, and running the challenge against an arena of your choice.
 
-```bash
-pip install grandjury
-export GRANDJURY_API_KEY=gj_sk_live_...
-```
+### 2. Make sure you've connected GitHub
 
-### 2. Connect GitHub on your profile
+Visit [your profile](https://humanjudge.com/profile) and click **Connect GitHub**. This links your GitHub handle to your HumanJudge account so we can match your PR to your profile. (You may have done this already during the challenge walkthrough — fine to skip if so.)
 
-Visit **[humanjudge.com/profile](https://humanjudge.com/profile)** and click **"Connect GitHub"**. This links your GitHub handle to your HumanJudge profile so we can match your PR to your account.
-
-Make sure your git is configured to use GitHub's noreply email for commits — this keeps your real email out of the public commit history:
+Optional but recommended: configure git to use GitHub's noreply email so your real email stays out of the public commit history:
 
 ```bash
 git config user.email "<your-github-username>@users.noreply.github.com"
 ```
 
-### 3. Pick a challenge, run it, submit the PR
+### 3. Open the PR
 
-Follow the walkthrough in [`/challenges/README.md`](challenges/README.md). It's one short task — count evaluations in any arena using the SDK. ~15 minutes start to finish.
-
-Then submit:
+Submit a PR that adds `/challenges/<your-github-handle>.md`. Two paths:
 
 **Option A — GitHub web UI (no local clone needed):**
 
@@ -46,7 +37,7 @@ Then submit:
 4. Name your file `<your-github-handle>.md`
 5. Paste the contents of [`/challenges/TEMPLATE.md`](challenges/TEMPLATE.md) into the editor
 6. Fill in:
-   - **Streams of interest:** 1–2 sentences per stream you're curious about (see the [README](README.md) for stream descriptions)
+   - **Streams of interest:** 2–4 sentences per stream — what interests you about it, your background, what you'd want to work on (see the [README](README.md) for stream descriptions)
    - **Challenge result:** the arena, your result, and a timestamp
 7. Click **Propose new file** → GitHub takes you to the PR creation screen
 8. Submit the PR
@@ -57,7 +48,6 @@ Then submit:
 # After forking on GitHub:
 git clone https://github.com/<your-handle>/grandjury.git
 cd grandjury
-git config user.email "<your-github-username>@users.noreply.github.com"
 
 # Create your file
 cp challenges/TEMPLATE.md challenges/<your-github-handle>.md
@@ -72,15 +62,10 @@ Then open the PR from your fork's GitHub page.
 
 ### What happens next
 
-- The PR template auto-loads with a checklist of confirmations
 - Reviewed personally within ~3 business days
-- **Star this repo** to get notified when your PR is merged
-- After merge: a Discord invite link is emailed to the address on your HumanJudge profile
-- Join Discord → verify in `#verify` → unlock the stream channels → post intro and start engaging
-
-### Privacy
-
-Email is **not required** in your PR — your GitHub handle is the public identifier (which is already public on any PR anyway). The Discord invite is sent privately to the email on your HumanJudge profile. Personal motivation / professional context belongs in your Discord intro, not in the public PR.
+- We'll notify you by email when your PR is merged
+- After merge: instructions for joining our Discord arrive in your inbox
+- Join Discord → verify in `#verification` → unlock the stream channels
 
 ---
 
