@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/logo.png" alt="HumanJudge" width="180" />
+
 # grandjury
 
 <!--
