@@ -6,20 +6,25 @@ from unittest.mock import patch, MagicMock
 
 
 def test_import():
-    """SDK imports without errors."""
+    """SDK imports without errors and exposes a sane version string."""
     from grandjury import GrandJury, Span, __version__
-    assert __version__ == "2.0.0"
+    # Don't hard-code version; just verify the format (e.g. "2.3.2")
+    assert isinstance(__version__, str)
+    assert __version__.count(".") >= 2  # major.minor.patch at minimum
+    assert __version__.split(".")[0].isdigit()
 
 
-def test_zero_config_no_key(capsys):
-    """No API key → no-op mode with stderr warning."""
+def test_zero_config_no_key():
+    """No API key → constructor accepts empty key without raising (silent init).
+
+    The SDK raises only when an authenticated method is called without a key
+    (see test_results_empty_without_key). Construction itself is silent.
+    """
     with patch.dict(os.environ, {}, clear=True):
         os.environ.pop("GRANDJURY_API_KEY", None)
         from grandjury.sdk import GrandJury
         gj = GrandJury(api_key="")
         assert gj._api_key == ""
-        captured = capsys.readouterr()
-        assert "No API key" in captured.err
 
 
 def test_zero_config_from_env():
@@ -70,11 +75,15 @@ def test_trace_silent_failure():
 
 
 def test_results_empty_without_key():
-    """results() returns empty when no API key."""
+    """results() raises an informative error when no API key is set.
+
+    The SDK is silent on construction but raises on authenticated method
+    calls, with a message pointing users to sign-up + token-generation URLs.
+    """
     from grandjury.sdk import GrandJury
     gj = GrandJury(api_key="")
-    result = gj.results()
-    assert result == []
+    with pytest.raises(RuntimeError, match="Authentication required"):
+        gj.results()
 
 
 def test_namespaces_exist():

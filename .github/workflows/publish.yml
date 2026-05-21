@@ -33,7 +33,7 @@ jobs:
     
     - name: Run tests
       run: |
-        uv run python scripts/quick_test.py
+        uv run pytest tests/ -v
 
   publish:
     needs: test
