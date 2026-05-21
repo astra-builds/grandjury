@@ -20,8 +20,13 @@ If that runs without error, you're good.
 
 [Create your profile here](https://humanjudge.com/auth?role=builder). On your [profile page](https://humanjudge.com/profile), do both while you're there:
 
-1. Generate an access token
-2. Click **Connect GitHub** — this is how we link your PR back to your account later
+**1. Generate an access token** (click *Regenerate* and copy the `gj_pat_…` string before it's masked):
+
+![Your API token panel](../assets/challenge-token.png)
+
+**2. Click *Connect GitHub*** — this is how we link your PR back to your account later:
+
+![GitHub connect panel](../assets/challenge-github.png)
 
 Then set the token in your shell:
 
