@@ -16,9 +16,14 @@ from grandjury import GrandJury
 
 If that runs without error, you're good.
 
-## Create access token
+## Create access token (and connect GitHub)
 
-[Create your profile here](https://humanjudge.com/auth?role=builder) and [generate a token](https://humanjudge.com/profile). Then set it in your shell:
+[Create your profile here](https://humanjudge.com/auth?role=builder). On your [profile page](https://humanjudge.com/profile), do both while you're there:
+
+1. Generate an access token
+2. Click **Connect GitHub** — this is how we link your PR back to your account later
+
+Then set the token in your shell:
 
 ```bash
 export GRANDJURY_API_KEY=<your-token>
@@ -47,7 +52,7 @@ Note the number, the arena slug, and the timestamp when you ran it.
 
 ## Next
 
-Back to the [main README's "How to apply"](../README.md#how-to-apply) for the last two steps (connect GitHub + open PR).
+Open a PR adding `/challenges/<your-github-handle>.md` — see [TEMPLATE.md](TEMPLATE.md). Full walkthrough in the [main README's "How to apply"](../README.md#how-to-apply).
 
 ---
 

@@ -9,15 +9,11 @@ Two ways to contribute:
 
 ## Apply to the R&D community
 
-The application is a small PR — not a form, not a CV submission. Three steps:
+The application is a small PR — not a form, not a CV submission. Two steps:
 
 ### 1. Complete the challenge
 
-Follow the walkthrough in [`/challenges/README.md`](challenges/README.md). It's one short task — count evaluations in any arena using the SDK. ~15 minutes start to finish. The walkthrough covers installing the SDK, signing up for a HumanJudge account + token, and running the challenge against an arena of your choice.
-
-### 2. Make sure you've connected GitHub
-
-Visit [your profile](https://humanjudge.com/profile) and click **Connect GitHub**. This links your GitHub handle to your HumanJudge account so we can match your PR to your profile. (You may have done this already during the challenge walkthrough — fine to skip if so.)
+Follow the walkthrough in [`/challenges/README.md`](challenges/README.md). It's one short task — count evaluations in any arena using the SDK. ~15 minutes start to finish. The walkthrough covers installing the SDK, creating an account, generating a token + connecting your GitHub (same profile page — both at once), and running the challenge against an arena of your choice.
 
 Optional but recommended: configure git to use GitHub's noreply email so your real email stays out of the public commit history:
 
@@ -25,7 +21,7 @@ Optional but recommended: configure git to use GitHub's noreply email so your re
 git config user.email "<your-github-username>@users.noreply.github.com"
 ```
 
-### 3. Open the PR
+### 2. Open the PR
 
 Submit a PR that adds `/challenges/<your-github-handle>.md`. Two paths:
 

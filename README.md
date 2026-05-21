@@ -78,9 +78,8 @@ How does live pluralistic evaluation surface inside the tools where developers a
 
 The application is a small pull request to this repo.
 
-1. **Complete the challenge** in [`/challenges/README.md`](challenges/README.md).
-2. **Make sure you've connected your GitHub** on [your profile](https://humanjudge.com/profile).
-3. **Open a PR** that adds `/challenges/<your-github-handle>.md` (see [`TEMPLATE.md`](challenges/TEMPLATE.md)). We'll notify you by email.
+1. **Complete the challenge** in [`/challenges/README.md`](challenges/README.md) (it includes generating a token and connecting your GitHub — both on the same profile page).
+2. **Open a PR** that adds `/challenges/<your-github-handle>.md` (see [`TEMPLATE.md`](challenges/TEMPLATE.md)). We'll notify you by email.
 
 Full walkthrough in [`CONTRIBUTING.md`](CONTRIBUTING.md#apply-to-the-rd-community).
 
