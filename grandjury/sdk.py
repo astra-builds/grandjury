@@ -120,37 +120,37 @@ class ModelResource:
         arena: Optional[str] = None,
         from_date: Optional[str] = None,
         to_date: Optional[str] = None,
-        limit: int = 1000,
-        offset: int = 0,
     ) -> ResultSet:
         """
         Vote-level data for this model.
+        Auto-paginates: iterate or call .to_pandas() to get all data.
 
         Args:
             arena: optional evaluation/benchmark ID to filter
             from_date: ISO date string (e.g. '2026-03-01')
             to_date: ISO date string (e.g. '2026-03-27')
-            limit: max results (default 1000)
-            offset: pagination offset
 
         Returns:
-            ResultSet with .to_pandas(), .to_polars(), .to_parquet(), .to_csv()
+            ResultSet with auto-pagination, .to_pandas(), .to_polars(), etc.
         """
+        from .result_set import PAGE_SIZE
+
         self._client._require_auth()
         model_id = self._resolve_id()
         if not model_id:
             return ResultSet([])
 
-        try:
-            import requests
-            params = {"detail": "votes"}
-            if arena:
-                params["evaluation_id"] = arena
-            if from_date:
-                params["from_date"] = from_date
-            if to_date:
-                params["to_date"] = to_date
+        base_params = {"detail": "votes"}
+        if arena:
+            base_params["evaluation_id"] = arena
+        if from_date:
+            base_params["from_date"] = from_date
+        if to_date:
+            base_params["to_date"] = to_date
 
+        def _fetch_page(offset: int) -> list:
+            import requests
+            params = {**base_params, "limit": PAGE_SIZE, "offset": offset}
             resp = requests.get(
                 f"{self._client._base_url}/api/v1/models/{model_id}/evaluations",
                 params=params,
@@ -158,47 +158,46 @@ class ModelResource:
                 timeout=self._client._timeout,
             )
             _handle_response_error(resp, "model.votes")
-            return ResultSet(resp.json())
-        except Exception as exc:
-            logger.debug("GrandJury: model.votes error: %s", exc)
-            return ResultSet([])
+            return resp.json()
+
+        return ResultSet([], _fetcher=_fetch_page)
 
     def traces(
         self,
         arena: Optional[str] = None,
         from_date: Optional[str] = None,
         to_date: Optional[str] = None,
-        limit: int = 1000,
-        offset: int = 0,
     ) -> ResultSet:
         """
         Trace-level data with vote aggregates for this model.
+        Auto-paginates: iterate or call .to_pandas() to get all data.
 
         Args:
             arena: optional evaluation/benchmark ID to filter
             from_date: ISO date string (e.g. '2026-03-01')
             to_date: ISO date string (e.g. '2026-03-27')
-            limit: max results (default 1000)
-            offset: pagination offset
 
         Returns:
-            ResultSet with .to_pandas(), .to_polars(), .to_parquet(), .to_csv()
+            ResultSet with auto-pagination, .to_pandas(), .to_polars(), etc.
         """
+        from .result_set import PAGE_SIZE
+
         self._client._require_auth()
         model_id = self._resolve_id()
         if not model_id:
             return ResultSet([])
 
-        try:
-            import requests
-            params = {}
-            if arena:
-                params["evaluation_id"] = arena
-            if from_date:
-                params["from_date"] = from_date
-            if to_date:
-                params["to_date"] = to_date
+        base_params = {}
+        if arena:
+            base_params["evaluation_id"] = arena
+        if from_date:
+            base_params["from_date"] = from_date
+        if to_date:
+            base_params["to_date"] = to_date
 
+        def _fetch_page(offset: int) -> list:
+            import requests
+            params = {**base_params, "limit": PAGE_SIZE, "offset": offset}
             resp = requests.get(
                 f"{self._client._base_url}/api/v1/models/{model_id}/evaluations",
                 params=params,
@@ -206,10 +205,9 @@ class ModelResource:
                 timeout=self._client._timeout,
             )
             _handle_response_error(resp, "model.traces")
-            return ResultSet(resp.json())
-        except Exception as exc:
-            logger.debug("GrandJury: model.traces error: %s", exc)
-            return ResultSet([])
+            return resp.json()
+
+        return ResultSet([], _fetcher=_fetch_page)
 
 
 class ArenaResource:
@@ -217,9 +215,10 @@ class ArenaResource:
     Resource object for a specific arena/benchmark.
 
     Usage:
-        gj.arena("eval-id").votes()                  # all models (premium)
-        gj.arena("eval-id").votes(model="slug")      # one model (premium)
-        gj.arena("eval-id").leaderboard()             # public aggregates
+        gj.arena("eval-id").models()                  # enrolled models (public)
+        gj.arena("eval-id").leaderboard()             # rankings with stats (public)
+        gj.arena("eval-id").votes()                   # all models (premium)
+        gj.arena("eval-id").votes(model="slug")       # one model (premium)
     """
 
     def __init__(self, client: "GrandJury", evaluation_id: str):
@@ -239,45 +238,75 @@ class ArenaResource:
                 timeout=self._client._timeout,
             )
             _handle_response_error(resp, "arena.leaderboard")
-            return ResultSet(resp.json())
+            rows = resp.json()
+            for r in rows:
+                r.pop("emoji", None)
+            return ResultSet(rows)
         except Exception as exc:
             logger.debug("GrandJury: arena.leaderboard error: %s", exc)
             return ResultSet([])
 
+    def models(self):
+        """
+        List models enrolled in this arena. No auth required.
+
+        Returns ModelList with per-model: name, slug, total_votes, pass_rate.
+        """
+        from .result_set import ModelList
+        try:
+            import requests
+            resp = requests.get(
+                f"{self._client._base_url}/api/v1/benchmarks/{self._evaluation_id}/leaderboard",
+                timeout=self._client._timeout,
+            )
+            _handle_response_error(resp, "arena.models")
+            rows = resp.json()
+            return ModelList([
+                {"name": r.get("model_name", r.get("name")), "slug": r.get("model_slug", r.get("slug"))}
+                for r in rows
+            ])
+        except Exception as exc:
+            logger.debug("GrandJury: arena.models error: %s", exc)
+            return ModelList([])
+
     def votes(
         self,
-        model: Optional[str] = None,
+        model=None,
         from_date: Optional[str] = None,
         to_date: Optional[str] = None,
-        limit: int = 1000,
-        offset: int = 0,
     ) -> ResultSet:
         """
         Premium: vote-level data across all models in this arena.
 
         Requires PAT with premium_subscriber or admin role.
+        Auto-paginates: iterate or call .to_pandas() to get all data.
 
         Args:
-            model: optional model slug to filter to one model
+            model: model slug (str) or list of slugs to filter
             from_date: ISO date string (e.g. '2026-03-01')
             to_date: ISO date string (e.g. '2026-03-27')
-            limit: max results (default 1000)
-            offset: pagination offset
 
         Returns:
-            ResultSet with .to_pandas(), .to_polars(), .to_parquet(), .to_csv()
+            ResultSet with auto-pagination, .to_pandas(), .to_polars(), etc.
         """
-        self._client._require_auth()
-        try:
-            import requests
-            params = {"detail": "votes", "limit": limit, "offset": offset}
-            if model:
-                params["model"] = model
-            if from_date:
-                params["from_date"] = from_date
-            if to_date:
-                params["to_date"] = to_date
+        from .result_set import PAGE_SIZE
 
+        self._client._require_auth()
+
+        base_params = {"detail": "votes"}
+        if model:
+            if isinstance(model, (list, tuple)):
+                base_params["model"] = ",".join(model)
+            else:
+                base_params["model"] = model
+        if from_date:
+            base_params["from_date"] = from_date
+        if to_date:
+            base_params["to_date"] = to_date
+
+        def _fetch_page(offset: int) -> list:
+            import requests
+            params = {**base_params, "limit": PAGE_SIZE, "offset": offset}
             resp = requests.get(
                 f"{self._client._base_url}/api/v1/benchmarks/{self._evaluation_id}/votes",
                 params=params,
@@ -285,10 +314,9 @@ class ArenaResource:
                 timeout=self._client._timeout,
             )
             _handle_response_error(resp, "arena.votes")
-            return ResultSet(resp.json())
-        except Exception as exc:
-            logger.debug("GrandJury: arena.votes error: %s", exc)
-            return ResultSet([])
+            return resp.json()
+
+        return ResultSet([], _fetcher=_fetch_page)
 
     def traces(
         self,

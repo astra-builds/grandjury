@@ -1,5 +1,9 @@
 from .api_client import GrandJuryClient, evaluate_model
+from .result_set import ResultSet
 from .sdk import GrandJury, Span
 
-__version__ = "2.0.0"
-__all__ = ["GrandJury", "Span", "GrandJuryClient", "evaluate_model"]
+# Public alias
+GJClient = GrandJury
+
+__version__ = "2.1.3"
+__all__ = ["GJClient", "GrandJury", "Span", "ResultSet", "GrandJuryClient", "evaluate_model"]
