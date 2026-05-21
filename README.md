@@ -6,11 +6,11 @@
 
 <!--
   GROWTH TEAM: tagline below is editable — A/B test framings as needed.
-  Numbers (25K reviews, 200+ reviewers, 58 models, 44 benchmarks) reflect
-  production DB at last edit time; refresh on rewrite. Keep the model
-  names current as the leaderboard evolves.
+  Deliberately stat-free + brand-name-free to avoid staleness. Live
+  numbers can be added as auto-updating shields.io endpoint badges
+  later (one small backend endpoint per stat).
 -->
-> Real human evaluations of AI models. **25,000+ blind reviews** by **200+ verified reviewers** across **58 models** (GPT-5, Claude Opus 4.7, Gemini 3.1, Grok 4.3, DeepSeek V4, Mistral, Kimi K2.6 and more) and **44 benchmarks**. Free. Python SDK + MCP server + ChatGPT GPT + REST.
+> Pluralistic human evaluation infrastructure for AI in production. Available via Python SDK, MCP server, ChatGPT GPT action, and REST API.
 
 [![PyPI](https://img.shields.io/pypi/v/grandjury?style=flat-square&color=blue)](https://pypi.org/project/grandjury/)
 [![Python](https://img.shields.io/pypi/pyversions/grandjury?style=flat-square&color=blue)](https://pypi.org/project/grandjury/)
@@ -42,11 +42,13 @@ print(f"Pass rate: {df['pass_rate'].mean():.1%}")
 
 ## Research community
 
+We're building trust infrastructure for next-generation AI — autonomous agents, production systems, decision-support tools — where ongoing human evaluation isn't a phase but a continuous layer. Diverse human judgment, captured live, in context.
+
 AI evaluation is usually a single number. We capture it as a continuous **datastream** instead — pluralistic, multi-reviewer, multi-context, from real production traffic. This open R&D community works on what that richer signal can do.
 
 Presenting at [Berkeley RDI's Agentic AI Summit, Aug 1–2 2026](https://rdi.berkeley.edu/).
 
-Six research streams. Pick by interest, not assignment.
+Underneath that work, six research streams. Anyone curious is welcome — researchers, engineers, designers, contributors of any background. Join whichever pulls you; we don't filter by credentials.
 
 ### Stream A — Pluralistic data for model training
 
