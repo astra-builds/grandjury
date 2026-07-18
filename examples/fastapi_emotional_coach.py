@@ -99,6 +99,18 @@ async def chat(req: ChatRequest):
     return ChatResponse(response=response_text, trace_id=trace_id)
 
 
+@app.get("/v1/chat/completions")
+async def openai_chat_completions_info():
+    """Endpoint info for validation checks."""
+    return {
+        "status": "ok",
+        "endpoint": "/v1/chat/completions",
+        "method": "POST",
+        "format": "OpenAI chat completions",
+        "model": "emotional-coach"
+    }
+
+
 @app.post("/v1/chat/completions", response_model=OpenAIChatResponse)
 async def openai_chat_completions(req: OpenAIChatRequest):
     # Extract last user message as prompt
