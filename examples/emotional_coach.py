@@ -21,7 +21,6 @@ from langchain_openai import ChatOpenAI
 from grandjury import GrandJury
 
 load_dotenv()
-
 gj = GrandJury()
 
 llm = ChatOpenAI(
@@ -41,6 +40,7 @@ scenarios = [
     "A student says: 'I'm stressed about choosing a career path after graduation.'",
     "A student says: 'I feel like I'm not smart enough for this program.'",
 ]
+
 
 for i, scenario in enumerate(scenarios):
     prompt = f"{SYSTEM_PROMPT}\n\nStudent's concern: {scenario}"
